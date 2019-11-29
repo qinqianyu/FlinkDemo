@@ -15,9 +15,10 @@ public class Producer {
             Socket accept = serverSocket.accept();
             OutputStream outputStream = accept.getOutputStream();
             PrintStream printStream = new PrintStream(outputStream);
-            for (int i = 0; i < 20; i++) {
-                Thread.sleep(10000);
-                printStream.println("char--" + i);
+            for (int i = 0; i < 2000; i++) {
+                Thread.sleep(1000);
+                String word="char"+i;
+                printStream.println(word);
             }
             printStream.println();
         } catch (Exception e) {
