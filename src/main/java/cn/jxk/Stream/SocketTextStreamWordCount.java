@@ -51,8 +51,8 @@ public class SocketTextStreamWordCount {
         });
 
         dataStreamSource.print();
-
         env.execute("Java WordCount from SocketTextStream Example");
+//        System.out.println(env.getExecutionPlan());
     }
 
     public static final class LineSplitter implements FlatMapFunction<String, Tuple2<String, Integer>> {
